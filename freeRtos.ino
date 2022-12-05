@@ -10,22 +10,21 @@ bool led_status2 = false;
 void TaskBlink1(void *pvParameters);
 void TaskBlink2(void *pvParameters);
 void setup() {
-  xTaskCreatePinnedToCore(
+  xTaskCreate(
     TaskBlink1,
-    "Taskname",
+    "Blink1",
     1024,
     NULL,
     1,
-    NULL,
-    1);
-  xTaskCreatePinnedToCore(
+    NULL
+    );
+  xTaskCreate(
     TaskBlink2,
-    "Taskname",
+    "Blink2",
     1024,
     NULL,
     1,
-    NULL,
-    1
+    NULL
   );
 }
 void loop() {
