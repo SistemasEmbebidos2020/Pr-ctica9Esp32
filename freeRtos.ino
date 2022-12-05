@@ -38,8 +38,8 @@ void TaskBlink1(void *pvParameters) {
   // initialize digital LED_BUILTIN on pin 13 as an output.
   pinMode(LED_BUILTIN, OUTPUT);
   for (;;) { // A Task shall never return or exit.
-    digitalWrite(LED_BUILTIN, led_status);
-    led_status = !led_status;
+    digitalWrite(LED_BUILTIN, led_status1);
+    led_status1 = !led_status1;
     delay(1000);
 
   }
